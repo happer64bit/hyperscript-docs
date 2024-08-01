@@ -1,7 +1,7 @@
 {
-  "name": "nextra-docs-template",
-  "version": "0.0.1",
-  "description": "Nextra docs template",
+  "name": "hyperscript-docs",
+  "version": "0.0.2",
+  "description": "Hyperscript Docs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
+    "url": "git+https://github.com/happer64bit/hyperscript-docs"
   },
-  "author": "Shu Ding <g@shud.in>",
+  "author": {
+    "email": "happer64bit@gmail.com",
+    "name": "Wint Khant Lin"
+  },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
-  },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "homepage": "https://github.com/happer64bit/hyperscript-docs",
   "dependencies": {
     "next": "^13.0.6",
     "nextra": "latest",
