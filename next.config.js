@@ -3,8 +3,10 @@ const withNextra = require('nextra')({
   themeConfig: './theme.config.tsx',
 })
 
+/** @type {import('next').NextConfig} */
 module.exports = {
   ...withNextra(),
+  basePath: "/hyperscript-docs",
   images: {
     unoptimized: true,
   },

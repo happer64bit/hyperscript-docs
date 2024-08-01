@@ -19,6 +19,7 @@
   "license": "MIT",
   "homepage": "https://github.com/happer64bit/hyperscript-docs",
   "dependencies": {
+    "hyperscript-docs": "file:",
     "next": "^13.0.6",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
