@@ -1,0 +1,69 @@
+## Syntax Guide
+
+### YAML Configuration File Structure
+
+```yaml
+global:
+  url: "https://example.com/api"
+  headers:
+    Content-Type: "application/json"
+  cookies:
+    session_id: "abc123"
+```
+
+- **`global:`**: This section contains global settings that apply to all tests.
+  - **`url:`**: The base URL for API requests. Replace `"https://example.com/api"` with your API's base URL.
+  - **`headers:`**: Default headers for all requests. Here, `Content-Type: "application/json"` specifies that requests should include this header.
+  - **`cookies:`**: Default cookies for all requests. `session_id: "abc123"` is an example of a cookie.
+
+```yaml
+run:
+  - name: "Test Example 1"
+    path: "/endpoint1"
+    method: "GET"
+    expect:
+      status: 200
+      contentType: "application/json"
+      body:
+        key1: "value1"
+```
+
+- **`run:`**: A list of individual test cases.
+  - **`- name:`**: The name of this test case. `"Test Example 1"` is a descriptive name.
+  - **`path:`**: The specific endpoint path to append to the base URL. `"/endpoint1"` is the path for this test.
+  - **`method:`**: The HTTP method to use for this request. `"GET"` is used in this example.
+  - **`expect:`**: Expected results for this test case.
+    - **`status:`**: The expected HTTP status code. `200` indicates a successful request.
+    - **`contentType:`**: Expected content type in the response headers. `"application/json"` specifies that the response should be in JSON format.
+    - **`body:`**: Expected JSON response body. `key1: "value1"` is the expected content.
+
+```yaml
+  - name: "Test Example 2"
+    path: "/endpoint2"
+    method: "POST"
+    headers:
+      Authorization: "Bearer token"
+    cookies:
+      session_id: "xyz789"
+    expect:
+      status: 201
+      contentType: "application/json"
+      body:
+        key2: "value2"
+```
+
+- **Second Test Case**:
+  - **`- name:`**: The name of this test case. `"Test Example 2"` is used here.
+  - **`path:`**: The endpoint path for this test. `"/endpoint2"` is used in this test.
+  - **`method:`**: The HTTP method. `"POST"` is used in this example.
+  - **`headers:`**: Headers specific to this test case. `Authorization: "Bearer token"` adds an authorization header.
+  - **`cookies:`**: Cookies specific to this test case. `session_id: "xyz789"` is used here.
+  - **`expect:`**: Expected results for this test case.
+    - **`status:`**: Expected HTTP status code. `201` indicates that the request was successful and a resource was created.
+    - **`contentType:`**: Expected content type in the response headers. `"application/json"` specifies JSON format.
+    - **`body:`**: Expected JSON response body. `key2: "value2"` is the expected content.
+
+### Notes
+
+- **Indentation**: YAML uses indentation to define structure. Use spaces, not tabs, for indentation.
+- **Value Formatting**: Ensure values, especially JSON objects, are correctly formatted.

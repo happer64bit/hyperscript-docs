@@ -1,15 +1,12 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
-    "type": "page"
-  },
-  "contact": {
-    "title": "Contact ↗",
+  "installation": "Installation",
+  "cli": "Command-Line Interface",
+  "syntax-guide": "Syntax Guide",
+  "homepage": {
+    "title": "Homepage ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://happer64bit.vercel.app",
     "newWindow": true
   }
 }

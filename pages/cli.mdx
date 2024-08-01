@@ -1,0 +1,51 @@
+## Command-Line Interface (CLI) Guide
+
+The **Test Runner** provides a command-line interface (CLI) to manage and execute tests. Below is a guide on how to use the CLI commands effectively.
+
+### Command Syntax
+
+```bash
+hyperscript <path-to-your-config-file> [--skip-error]
+```
+
+### Options
+
+- `<path-to-your-config-file>`: Specifies the path to the YAML configuration file that contains the test settings and parameters. Replace this placeholder with the actual path to your file.
+
+- `--skip-error` (Optional): When included, this flag will skip errors and continue executing the tests even if some tests fail. Omitting this option will stop the execution on errors.
+
+### Examples
+
+#### Running Tests with Default Behavior
+
+```bash
+hyperscript /path/to/config.yaml
+```
+
+This command runs the tests as specified in `/path/to/config.yaml`. If any test fails, the process will halt and display the error.
+
+#### Running Tests and Skipping Errors
+
+```bash
+hyperscript /path/to/config.yaml --skip-error
+```
+
+This command runs the tests and continues even if some tests fail. Errors will be reported, but the execution will not stop.
+
+### Output
+
+The CLI will display test results and status updates as follows:
+
+- **Success**: Test results are highlighted in green, indicating that the test passed successfully.
+
+- **Failure**: Test results are highlighted in red, indicating that the test failed. Detailed error messages will include the method and URL of the failed request.
+
+### Additional Help
+
+For more information about the CLI commands, you can use:
+
+```bash
+hyperscript --help
+```
+
+This command will display a help message with details on usage and options.
