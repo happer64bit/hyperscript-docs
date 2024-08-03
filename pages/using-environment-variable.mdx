@@ -1,0 +1,73 @@
+## Using Environment Variables in Syntax
+
+In your YAML configuration file, you can use placeholders for environment variables with the following syntax:
+
+```yaml
+{{VARIABLE_NAME}}
+```
+
+When the configuration is processed, `{{VARIABLE_NAME}}` will be replaced with the value of the environment variable `VARIABLE_NAME`.
+
+## Example Configuration
+
+Here's an example of a YAML configuration file using environment variables:
+
+```yaml
+global:
+  url: https://{{API_HOST}}
+  headers:
+    Authorization: Bearer {{API_TOKEN}}
+  cookies:
+    session_id: {{SESSION_ID}}
+
+run:
+  - name: Get All Cars
+    path: /api/v1/cars
+    expect:
+      contentType: application/json
+      status: 200
+
+  - name: Get Single Car
+    path: /api/v1/cars/1
+    expect:
+      contentType: application/json
+      status:
+        - value: 200
+        - value: 201
+      contains:
+        id: 1
+      lessThan:
+        price: 30000
+      greaterThan:
+        year: 2010
+      body:
+        make: Toyota
+        model: Corolla
+        color: Silver
+```
+
+In this example:
+
+- `{{API_HOST}}` will be replaced with the value of the `API_HOST` environment variable.
+- `{{API_TOKEN}}` will be replaced with the value of the `API_TOKEN` environment variable.
+- `{{SESSION_ID}}` will be replaced with the value of the `SESSION_ID` environment variable.
+
+## Setting Environment Variables
+
+Before running your tests, ensure you have set the necessary environment variables. You can set environment variables in your terminal or command prompt.
+
+### On Unix-based Systems (Linux, macOS)
+
+```bash
+export API_HOST=freetestapi.com
+export API_TOKEN=your_token_here
+export SESSION_ID=your_session_id_here
+```
+
+### On Windows
+
+```cmd
+set API_HOST=freetestapi.com
+set API_TOKEN=your_token_here
+set SESSION_ID=your_session_id_here
+```
