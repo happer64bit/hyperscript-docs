@@ -3,6 +3,7 @@
   "installation": "Installation",
   "cli": "Command-Line Interface",
   "syntax-guide": "Syntax Guide",
+  "using-environment-variable": "Using Environment Variable",
   "homepage": {
     "title": "Homepage ↗",
     "type": "page",
